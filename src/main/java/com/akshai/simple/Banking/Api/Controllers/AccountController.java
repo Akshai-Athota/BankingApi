@@ -41,7 +41,7 @@ public class AccountController {
         }
     }
 
-    @PatchMapping("/withdraw")
+    @PatchMapping("{accountId}/withdraw")
     public ResponseEntity<AccountDto> withdraw(@PathVariable Long accountId,@RequestBody AccountDto accountDto){
         try{
             return ResponseEntity.ok(accountService.withdraw(accountId,accountDto.getBalance()));
